@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-home',
@@ -7,6 +8,23 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
-  constructor() {}
+  public rating: number = 0;
+  public loading: any;
+  constructor(private navCtrl: NavController) { }
+
+  ngOnInit() {
+
+  }
+
+  setRating(rating: number){
+    this.rating = rating;
+  }
+
+  cancel() {
+    this.navCtrl.navigateRoot('');
+  }
+
+  submitFeedback() {
+  }
 
 }

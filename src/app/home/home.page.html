@@ -1,14 +1,72 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content class="background">
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-button fill="clear" (click)="cancel()">
+          <ion-icon name="arrow-back"></ion-icon>
+        </ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col style="padding-left: 10%;">
+        <h4>Connect</h4>
+        <p style="font-weight: lighter; line-height: 1.5em;">
+          Thank you for reaching out. 
+          <br>
+          Kindly review or buy again
+        </p>
+        <br>
+        <br>
+        <br>
+      </ion-col>
+    </ion-row>
 
-<ion-content>
-  <div class="ion-padding">
-    The world is your oyster.
-    <p>If you get lost, the <a target="_blank" rel="noopener" href="https://ionicframework.com/docs/">docs</a> will be your guide.</p>
-  </div>
+    <ion-row>
+      <ion-col text-center>
+        <span style="font-weight: bold">Review</span>
+        <span class="trapez"></span>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <div class="rating ion-text-center">
+          <span class="star-empty" (click)="setRating(1)" [ngClass]="{'star-gold': rating > 0}"></span>
+          <span class="star-empty" (click)="setRating(2)" [ngClass]="{'star-gold': rating > 1}"></span>
+          <span class="star-empty" (click)="setRating(3)" [ngClass]="{'star-gold': rating > 2}"></span>
+          <span class="star-empty" (click)="setRating(4)" [ngClass]="{'star-gold': rating > 3}"></span>
+          <span class="star-empty" (click)="setRating(5)" [ngClass]="{'star-gold': rating > 4}"></span>
+        </div>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <div class="ion-text-center" style="color: #0a76bf; font-size: 2.2em; font-weight: bold;">
+          {{rating}}/5
+        </div>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <div class="input-div">
+          <ion-textarea style="padding: 10px;" rows="6" placeholder="Share thoughts or place an order"></ion-textarea>
+        </div>
+
+        <div class="input-div-email">
+          <ion-input style="padding: 10px !important;" placeholder="Your email"></ion-input>
+        </div>
+
+        <div class="input-div-email">
+          <ion-input style="padding: 10px !important;" placeholder="Phone number"></ion-input>
+        </div>
+
+        <div class="ion-padding">
+          <ion-button (click)="submitFeedback()" expand="block" class="ion-no-margin">Submit</ion-button>
+        </div>
+
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
